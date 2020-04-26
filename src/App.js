@@ -9,7 +9,7 @@ function App() {
 
   return (
     <div>
-      <p>Waktu Hitung coy {count} times</p>
+      <p>Waktu Hitung  {count} times</p>
       <button onClick={() => setCount(count + 1)}>
         Click me
       </button>
