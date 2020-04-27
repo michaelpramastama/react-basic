@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
-import {
-    UserOutlined,
-    VideoCameraOutlined,
-    UploadOutlined,
-} from '@ant-design/icons';
-import { Layout, Menu } from 'antd';
+// import {
+//     UserOutlined,
+//     VideoCameraOutlined,
+//     UploadOutlined,
+// } from '@ant-design/icons';
+import { Switch, Route, Link } from "react-router-dom";
+import { Layout, Menu, Icon } from 'antd';
+import pageRoutes from '../../../config/router/index';
 import './style.css';
+
 
 const { Header, Content, Footer, Sider } = Layout;
 
@@ -22,137 +25,32 @@ const Dasboard = () => {
                 height: '100vh',
                 position: 'fixed',
                 left: 0
-            }}
-                
-                collapsible collapsed={collapsed} onCollapse={onCollapse}
-                >
+            }}collapsible collapsed={collapsed} onCollapse={onCollapse}>
                 <div className="logo" />
-                <Menu theme="dark" mode="inline" defaultSelectedKeys={['4']}>
-                    <Menu.Item key="1">
-                        <UserOutlined />
-                        <span className="nav-text">nav 1</span>
-                    </Menu.Item>
-                    <Menu.Item key="2">
-                        <VideoCameraOutlined />
-                        <span className="nav-text">nav 2</span>
-                    </Menu.Item>
-                    <Menu.Item key="3">
-                        <UploadOutlined />
-                        <span className="nav-text">nav 3</span>
-                    </Menu.Item>
-                    <Menu.Item key="4">
-                        <UserOutlined />
-                        <span className="nav-text">nav 1</span>
-                    </Menu.Item>
-                    <Menu.Item key="5">
-                        <VideoCameraOutlined />
-                        <span className="nav-text">nav 2</span>
-                    </Menu.Item>
-                    <Menu.Item key="6">
-                        <UploadOutlined />
-                        <span className="nav-text">nav 3</span>
-                    </Menu.Item>
+                <Menu theme="dark" mode="inline" defaultSelectedKeys={['0']}>
+                    {pageRoutes.map((data, i) => {
+                        return (
+                            <Menu.Item key={i}>
+                                <Link to={data.link}>
+                                    <Icon type={data.icon} />
+                                    <span className="nav-text">{data.name}</span>
+                                </Link>
+                            </Menu.Item>
+                        );
+                    })}
                 </Menu>
             </Sider>
             <Layout>
                 <Header  style={{ background: '#fff', padding: 0 }} />
                 <Content style={{ margin: '24px 16px 0', overflow: 'initial', marginLeft: '100px' }}>
                     <div style={{ background: '#fff',padding: 24, textAlign: 'center' }}>
-                        ...
-                        <br />
-                        Really
-                        <br />
-                        ...
-                        <br />
-                        ...
-                        <br />
-                        ...
-                        <br />
-                        long
-                        <br />
-                        ...
-                        <br />
-                        ...
-                        <br />
-                        ...
-                        <br />
-                        ...
-                        <br />
-                        ...
-                        <br />
-                        ...
-                        <br />
-                        ...
-                        <br />
-                        ...
-                        <br />
-                        ...
-                        <br />
-                        ...
-                        <br />
-                        ...
-                        <br />
-                        ...
-                        <br />
-                        ...
-                        <br />
-                        ...
-                        <br />
-                        ...
-                        <br />
-                        ...
-                        <br />
-                        ...
-                        <br />
-                        ...
-                        <br />
-                        ...
-                        <br />
-                        ...
-                        <br />
-                        ...
-                        <br />
-                        ...
-                        <br />
-                        ...
-                        <br />
-                        ...
-                        <br />
-                        ...
-                        <br />
-                        ...
-                        <br />
-                        ...
-                        <br />
-                        ...
-                        <br />
-                        ...
-                        <br />
-                        ...
-                        <br />
-                        ...
-                        <br />
-                        ...
-                        <br />
-                        ...
-                        <br />
-                        ...
-                        <br />
-                        ...
-                        <br />
-                        ...
-                        <br />
-                        ...
-                        <br />
-                        ...
-                        <br />
-                        ...
-                        <br />
-                        ...
-                        <br />
-                        ...
-                        <br />
-                        content
+                        <Switch>
+                            {pageRoutes.map((data, i) => {
+                                return (
+                                    <Route path={data.path} component={data.component} exact/>
+                                );
+                            })}
+                        </Switch>
                     </div>
                 </Content>
                 <Footer style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED</Footer>
