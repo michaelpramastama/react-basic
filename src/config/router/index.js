@@ -1,14 +1,15 @@
 import Home from '../../containers/layout/pages/home';
 import Contact from '../../containers/layout/pages/contact';
 import About from '../../containers/layout/pages/about';
+import Tableku from '../../containers/layout/pages/table';
 const pageRoutes = () => {
     return [
         {
-            path: "/about",
-            link: "/about",
+            path: "/table",
+            link: "/table",
             icon: "about",
-            name: "Navigasi about",
-            component: About
+            name: "Table",
+            component: Tableku
         },
         {
             path: "/contact",
