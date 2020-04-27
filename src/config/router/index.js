@@ -1,27 +1,33 @@
+import React, { Component } from 'react';
 import Home from '../../containers/layout/pages/home';
 import Contact from '../../containers/layout/pages/contact';
 import About from '../../containers/layout/pages/about';
-import Tableku from '../../containers/layout/pages/table';
+// import Tableku from '../../containers/layout/pages/table';
+import {
+    UserOutlined,
+    VideoCameraOutlined,
+    UploadOutlined,
+} from '@ant-design/icons';
 const pageRoutes = () => {
     return [
         {
-            path: "/table",
-            link: "/table",
-            icon: "about",
+            path: "/about",
+            link: "/about",
+            icon: <UserOutlined/>,
             name: "Table",
-            component: Tableku
+            component: About
         },
         {
             path: "/contact",
             link: "/contact",
-            icon: "video contact",
+            icon: <VideoCameraOutlined />,
             name: "Navigasi contact",
             component: Contact
         },
         {
             path: "/home",
             link: "/home",
-            icon: "home",
+            icon: <UploadOutlined />,
             name: "Navigasi home",
             component: Home
         }
