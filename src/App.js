@@ -1,26 +1,13 @@
 import React, { useState } from 'react';
 import { Button } from 'antd';
+import Dasboard from './containers/layout/dasboard/index';
 import logo from './logo.svg';
 import './App.css';
 
 
 function App() {
   return(
-    <div className="App">
-      <header className="App-header">
-          <img src={logo} className="App-logo" />
-          <p>
-            edit <code>src/App.js</code>And save to reload.
-          </p>
-          <a className="App-link"
-             href="https://reactjs.org"
-             target="_blank"
-          >
-            Learn React
-          </a>
-        <Button type="primary">Button</Button>
-      </header>
-    </div>
+    < Dasboard />
   );
 }
 
