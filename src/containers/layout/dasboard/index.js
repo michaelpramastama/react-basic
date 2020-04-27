@@ -21,7 +21,7 @@ const Dasboard = () => {
             <Sider 
             style={{
                 overflow: 'auto',
-                height: '100vh',
+                // height: '100vh',
                 left: 0
             }}
                 trigger={null} collapsible collapsed={collapsed}>
